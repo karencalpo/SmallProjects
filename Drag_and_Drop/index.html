@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.js"></script>
+    <link href="css/style.css" rel="stylesheet" title="Default style">
+    <title>Kitty Timeout!</title>
+    <meta name="description" content="Drag cat images from the Kitty Playpen to the Time Out Pen">
+    <meta name="robots" content="noindex">
+    
+</head>
+<body>
+<header>
+    <hr>
+    <h1>Place the kitties in and out of the Time Out Pen!</h1>     
+    <hr>
+</header>
+<main>
+    <h3 class="header_text">Kitty Playpen!</h3>
+    <section ondragenter="return dEnter(event)" ondrop="return dDrop(event)" ondragover="return dOver(event)">
+        <img src="images/kitty1.jpg" id="KittyA" class="drag" draggable="true" ondragstart="return dStart(event)" alt="Cute marmalade cat rauses its paw">
+        <img src="images/kitty2.jpg" id="KittyB" class="drag" draggable="true" ondragstart="return dStart(event)" alt="Cat hiding in a bag">
+        <img src="images/kitty3.jpg" id="KittyC" class="drag" draggable="true" ondragstart="return dStart(event)" alt="Kitten laying down and looking up">
+        <img src="images/kitty4.jpg" id="KittyD" class="drag" draggable="true" ondragstart="return dStart(event)" alt="Marmalade and orange kitten sitting">
+    </section>
+    <h3 class="header_text">Time Out Pen!</h3>
+    <div id="drop" ondragenter="return dEnter(event)" 
+                      ondrop="return dDrop(event)" 
+                      ondragover="return dOver(event)">
+    </div>
+</main>
+<footer>
+    <hr>
+    <p><small>Copyright &copy; 2016 Karen Calpo. All rights reserved.</small></p>
+</footer>
+<script src="scripts/script.js"></script>
+</body>
+</html>

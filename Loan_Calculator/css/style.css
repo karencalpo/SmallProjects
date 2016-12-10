@@ -1,0 +1,11 @@
+#loan_form {
+    max-width: 75%;
+}
+
+#lenders {
+    display:none;
+}
+
+input:required:invalid {
+    background-color:yellow;
+}
