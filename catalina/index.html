@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
+    
+    <body>
+        <div class="login_bar">
+            <div class="login_text">
+                <span id="welcome_text">Welcome, <span id="user"></span></span>
+                <div class="login"><button id="login_button" onClick="login_form();">Login</button></div>
+            </div>
+            <div class="cleared"></div>
+        </div>
+        <form id="login_form"> 
+          <div class="group img1">
+            <input type="text" id="username" placeholder="Username">
+          </div>   
+          <div class="group img2">
+            <input type="text" id="password" placeholder="Password">
+          </div>
+          <button type="button" class="button_login buttonPink" onClick="login();">LOGIN</button>
+        </form>
+    <script src="js/script.js"></script>
+    </body>
+</html>

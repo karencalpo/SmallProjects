@@ -1,0 +1,115 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	background-color: #00BCD4;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.login_text {
+  float: left;
+  width: 100%;
+}
+
+.login {
+  float: right;
+  width: 100px;
+}
+
+.cleared {
+  clear: both;
+}
+
+#welcome_text {
+    margin-left: 2%;
+    display: none;
+}
+
+#login_button {
+    background:none!important;
+    border: none; 
+    padding:0!important;
+    font: inherit;
+    cursor: pointer;
+    outline-color: transparent;
+    color: #00BCD4;
+}
+
+.login_bar {
+    line-height: 50px;
+    box-shadow: 1px 2px 10px #000000;
+    background-color: #fff;
+    color: #00BCD4;
+}
+
+.button_login {
+  position: relative;
+  display: inline-block;
+  padding: 12px 24px;
+  margin: .3em 0 1em 0;
+  width: 100%;
+  vertical-align: middle;
+  color: #fff;
+  font-size: 16px;
+  line-height: 20px;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+  letter-spacing: 1px;
+  background: transparent;
+  border: 0;
+}
+.button:focus { outline: 0; }
+
+.buttonPink {
+  background: #FF4081;
+  text-shadow: 1px 1px 0 rgba(39, 110, 204, .5);
+}
+
+.buttonPink:hover { 
+    background: #E53A74; 
+}
+
+form {
+	width: 380px;
+	margin: 4em auto;
+	padding: 3em 2em 2em 2em;
+	background: #fafafa;
+	border: 1px solid #ebebeb;
+    display: none;
+    box-shadow: 10px 10px 40px #000000;
+}
+
+.group { 
+	position: relative; 
+	margin-bottom: 45px; 
+}
+
+input {
+	font-size: 18px;
+	padding: 10px 10px 10px 5px;
+	-webkit-appearance: none;
+	display: inline-block;
+	background: #fafafa;
+	color: #636363;
+	width: 100%;
+	border: none;
+	border-radius: 0;
+	border-bottom: 1px solid #757575;
+}
+
+.img1 {
+    background: url(../images/username.jpg) no-repeat scroll 7px 7px;
+    padding-left:50px;
+}
+
+.img2 {
+    background: url(../images/password.jpg) no-repeat scroll 7px 7px;
+    padding-left:50px;
+}
+
+input:focus { 
+    outline: none; 
+}
