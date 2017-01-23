@@ -7,8 +7,17 @@ html, body {
 }
 
 body {
-    padding: 50px 10px 50px 5px;
     line-height: 1.11;
+    padding: 0 0 0 5px;
+}
+
+#activity {
+    padding-top: 70px;
+    
+}
+
+#menu {
+    margin-bottom: 0;
 }
 
 .container-row {
@@ -63,6 +72,7 @@ body {
 
 .glyphicon-menu-left-white {
     color: white;
+    float: left;
 }
 
 .navbar-header {
@@ -118,7 +128,8 @@ body {
 .navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover { 
     background-color: #9b59b6;
 }
-/* dropdown */
+
+/* Dropdown Menu */
 .navbar-custom .navbar-nav .dropdown-menu  { 
   background-color: #8e44ad;
 }
@@ -149,13 +160,6 @@ body {
 .navbar-custom .navbar-nav > li > a:hover, .nav > li > a:focus { text-decoration: none; background-color: #8e44ad; }
 
 .navbar-custom .navbar-nav > li > a:hover, .nav > li > a:active { text-decoration: none; background-color: #9b59b6; }
-
-/*
-$bgDefault      : #9b59b6;
-$bgHighlight    : #8e44ad;
-$colDefault     : #ecf0f1;
-$colHover       : #ecdbff; 
-*/
 
 
 

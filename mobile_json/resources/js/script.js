@@ -4,12 +4,25 @@ var data;
 var jsonResponse;
 var user_activity;
 var millisec_start = 1468334211000;
+var relative_path = "/mobile_json";
 
 $(document).ready(getData());
 
 $('.nav a').on('click', function(){
     $('.btn-navbar').click();
     $('.navbar-toggle').click();
+});
+
+$('#arrow').on('click', function(){
+    if($('#title_name').text() === "Comments"){
+        getData();
+    } else if($('#title_name').text() === "Ideas") {
+        comments(user_activity);
+    } else if ($('#title_name').text() === "Replies") {
+        ideas(user_activity);
+    } else if ($('#title_name').text() === "Activity") {
+        replies(user_activity);
+    }
 });
 
 function convertTime(ms) {
@@ -58,7 +71,6 @@ function getData() {
     
     var xhr = new XMLHttpRequest();
    
-    
     xhr.open("GET", "http://projects.draconicscales.com/mobile_json/resources/data/data.json", true);
     xhr.setRequestHeader("Content-Type", "application/json");	
 
@@ -77,12 +89,13 @@ function getData() {
 }
 
 function activity(data) {
+    $("#title_name").text($("#all").text());
     $( "#activity" ).remove();
     $("<div></div>").insertAfter("nav").addClass("container").attr("id", "activity");
     for(var key in user_activity) {
         $("<div></div>").appendTo("#activity").addClass("row").attr("id", user_activity[key].nodeid);
 
-        $("<div></div>").appendTo('#' + user_activity[key].nodeid).addClass("col-xs-12 container-row").html('<img class="avatar" src="' + user_activity[key].authorAvatar + '" height="64px" width="64px">');
+        $("<div></div>").appendTo('#' + user_activity[key].nodeid).addClass("col-xs-12 container-row").html('<img class="avatar" src=' + relative_path + user_activity[key].authorAvatar + ' height="64px" width="64px">');
 
         if(user_activity[key].nodeTypeString === "Comment") {
             $("<div></div>").appendTo('#' + user_activity[key].nodeid + ' div:first-child').addClass("row-style").html('<p class="id-intro"><span class="username">' + user_activity[key].author + '</span> commented on the idea</p><p class="subject">' + user_activity[key].title + '</p><p class="timestamp">' + convertTime(user_activity[key].postDate - millisec_start) + '</p>');
@@ -104,7 +117,7 @@ function comments(data) {
         if(user_activity[key].nodeTypeString === "Comment") {
             $("<div></div>").appendTo("#activity").addClass("row").attr("id", user_activity[key].nodeid);
 
-            $("<div></div>").appendTo('#' + user_activity[key].nodeid).addClass("col-xs-12 container-row").html('<img class="avatar" src="' + user_activity[key].authorAvatar + '" height="64px" width="64px">');
+            $("<div></div>").appendTo('#' + user_activity[key].nodeid).addClass("col-xs-12 container-row").html('<img class="avatar" src=' + relative_path + user_activity[key].authorAvatar + ' height="64px" width="64px">');
             
             $("<div></div>").appendTo('#' + user_activity[key].nodeid + ' div:first-child').addClass("row-style").html('<p class="id-intro"><span class="username">' + user_activity[key].author + '</span> commented on the idea</p><p class="subject">' + user_activity[key].title + '</p><p class="timestamp">' + convertTime(user_activity[key].postDate - millisec_start) + '</p>');
         }
@@ -121,7 +134,7 @@ function ideas(data) {
             
             $("<div></div>").appendTo("#activity").addClass("row").attr("id", user_activity[key].nodeid);
 
-            $("<div></div>").appendTo('#' + user_activity[key].nodeid).addClass("col-xs-12 container-row").html('<img class="avatar" src="' + user_activity[key].authorAvatar + '" height="64px" width="64px">');
+            $("<div></div>").appendTo('#' + user_activity[key].nodeid).addClass("col-xs-12 container-row").html('<img class="avatar" src=' + relative_path + user_activity[key].authorAvatar + ' height="64px" width="64px">');
             
             $("<div></div>").appendTo('#' + user_activity[key].nodeid + ' div:first-child').addClass("row-style").html('<p class="id-intro"><span class="username">' + user_activity[key].author + '</span> posted an idea</p><p class="subject">' + user_activity[key].title + '</p><p class="timestamp">' + convertTime(user_activity[key].postDate - millisec_start) + '</p>');
         }
@@ -138,7 +151,7 @@ function replies(data) {
             
             $("<div></div>").appendTo("#activity").addClass("row").attr("id", user_activity[key].nodeid);
 
-            $("<div></div>").appendTo('#' + user_activity[key].nodeid).addClass("col-xs-12 container-row").html('<img class="avatar" src="' + user_activity[key].authorAvatar + '" height="64px" width="64px">');
+            $("<div></div>").appendTo('#' + user_activity[key].nodeid).addClass("col-xs-12 container-row").html('<img class="avatar" src=' + relative_path + user_activity[key].authorAvatar + ' height="64px" width="64px">');
             
             $("<div></div>").appendTo('#' + user_activity[key].nodeid + ' div:first-child').addClass("row-style").html('<p class="id-intro"><span class="username">' + user_activity[key].author + '</span> replies to a comment on idea</p><p class="subject">' + user_activity[key].title + '</p><p class="timestamp">' + convertTime(user_activity[key].postDate - millisec_start) + '</p>');
         }

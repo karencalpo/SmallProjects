@@ -9,7 +9,7 @@
         "postDate": 1468334737000,
         "author": "Tony Handy",
         "authorId": 1,
-        "authorAvatar": "/resources/avatar1465389809397.png"
+        "authorAvatar": "/resources/images/avatar1465389809397.png"
       },
       {
         "nodeType": 2,
@@ -19,7 +19,7 @@
         "postDate": 1468334687000,
         "author": "Tony Handy",
         "authorId": 1,
-        "authorAvatar": "/resources/avatar1465389809397.png"
+        "authorAvatar": "/resources/images/avatar1465389809397.png"
       },
       {
         "nodeType": 18,
@@ -29,7 +29,7 @@
         "postDate": 1468334438000,
         "author": "Elmo Elmo",
         "authorId": 364,
-        "authorAvatar": "/resources/avatar1461606369555.jpg"
+        "authorAvatar": "/resources/images/avatar1461606369555.jpg"
       },
       {
         "nodeType": 17,
@@ -39,7 +39,7 @@
         "postDate": 1468334413000,
         "author": "Elmo Elmo",
         "authorId": 364,
-        "authorAvatar": "/resources/avatar1461606369555.jpg"
+        "authorAvatar": "/resources/images/avatar1461606369555.jpg"
       },
       {
         "nodeType": 2,
@@ -49,7 +49,7 @@
         "postDate": 1468334214000,
         "author": "Cooke Monster",
         "authorId": 380,
-        "authorAvatar": "/resources/no_avatar.gif"
+        "authorAvatar": "/resources/images/no_avatar.gif"
       }
     ]
   },
