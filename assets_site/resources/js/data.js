@@ -1,6 +1,6 @@
 var icon = document.getElementById('container').childNodes;
 var sort_button = document.getElementById('press');
-
+var directory = "/assets_site";
 
 document.addEventListener("onload", navHeight(), bannerWidth(), getData());
 document.getElementById('press').onclick = function(){ activity(data); };
@@ -12,7 +12,7 @@ window.addEventListener("resize", function(){
 function getData() {
     
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://127.0.0.1:4326/resources/data/data.json", true);
+    xhr.open("GET", directory + "/resources/data/data.json", true);
     xhr.setRequestHeader("Content-Type", "application/json");	
 
     xhr.onreadystatechange = function() {
@@ -32,15 +32,16 @@ function activity(data) {
     
     if(document.getElementById('container').className === "alpha_rev" || document.getElementById('container').className === "") {
         data.sort( function( a, b ) {
-            a = a.title.toLowerCase();
-            b = b.title.toLowerCase();
+            a = a.title[0].toLowerCase();
+            b = b.title[0].toLowerCase();
             return a < b ? -1 : a > b ? 1 : 0;
         });
         document.getElementById('container').className = "alpha";
     } else {
         data.sort( function( a, b ) {
-            a = a.title.toLowerCase();
-            b = b.title.toLowerCase();
+            //console.log(a.title[0]);
+            a = a.title[0].toLowerCase();
+            b = b.title[0].toLowerCase();
             return b < a ? -1 : b > a ? 1 : 0;
         });
         document.getElementById('container').className = "alpha_rev";
@@ -57,11 +58,11 @@ function activity(data) {
             node.id = "pic_" + key;
             document.getElementById("container").appendChild(node);
             var img = document.createElement("img");
-            img.src = "/images/" + data[key].image_name;
+            img.src = directory + "/images/" + data[key].image_name;
             img.alt = data[key].image_name;
             document.getElementById(node.id).appendChild(img);
             var title = document.createElement("p");
-            title.innerHTML = data[key].image_name + '<br><i>' + data[key].image_name + '</i>';
+            title.innerHTML = data[key].title + '<br><i>' + data[key].image_name + '</i>';
             document.getElementById(node.id).appendChild(title);
             var hr = document.createElement("hr");
             document.getElementById(node.id).appendChild(hr);
