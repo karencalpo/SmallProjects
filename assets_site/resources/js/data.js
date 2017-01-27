@@ -1,6 +1,6 @@
 var icon = document.getElementById('container').childNodes;
 var sort_button = document.getElementById('press');
-var directory = "/assets_site";
+var directory = "";
 
 document.addEventListener("onload", navHeight(), bannerWidth(), getData());
 document.getElementById('press').onclick = function(){ activity(data); };
@@ -32,16 +32,15 @@ function activity(data) {
     
     if(document.getElementById('container').className === "alpha_rev" || document.getElementById('container').className === "") {
         data.sort( function( a, b ) {
-            a = a.title[0].toLowerCase();
-            b = b.title[0].toLowerCase();
+            a = a.title.toLowerCase();
+            b = b.title.toLowerCase();
             return a < b ? -1 : a > b ? 1 : 0;
         });
         document.getElementById('container').className = "alpha";
     } else {
         data.sort( function( a, b ) {
-            //console.log(a.title[0]);
-            a = a.title[0].toLowerCase();
-            b = b.title[0].toLowerCase();
+            a = a.title.toLowerCase();
+            b = b.title.toLowerCase();
             return b < a ? -1 : b > a ? 1 : 0;
         });
         document.getElementById('container').className = "alpha_rev";

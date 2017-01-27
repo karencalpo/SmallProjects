@@ -9,8 +9,8 @@ html, body {
     font-family: helvetica;
     height: 100%;
     width: 100%;
-    min-width: 1139px;
-    overflow-x:hidden;
+    min-width: 1039px;
+    overflow-x: hidden;
 }
 
 #wrapper {
@@ -22,9 +22,9 @@ html, body {
 }
 
 #banner { 
-    float: right;
+    float:right;
     position: relative;
-    background-image:url(/assets_site/images/top_banner.jpg);
+    background-image:url(/images/top_banner.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     min-width: 100%;
@@ -35,6 +35,7 @@ html, body {
     position: fixed;
     background-color: black;
     height: 100%;
+    z-index:99;
 }
 
 #footer {
