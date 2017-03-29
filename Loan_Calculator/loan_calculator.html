@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.js"></script>
+        <link href="css/style.css" rel="stylesheet" title="Default style">
+        <title>Loan Calculator</title>
+    </head>  
+    <body>
+        <h2>Loan Calculator</h2>
+        <p>Please fill out the form below.</p>
+        <form id="loan_form">
+            <section>    
+
+                    <fieldset>
+                        <legend><b>Enter Loan Data</b></legend>
+
+                        <label for="loan_amt" onblur="validate_dollar()">Loan Amount ($): </label>
+                        <input type="text" id="loan_amt" name="loan_amt">
+                        
+                        <br><br>
+                        
+                        <label for="annual_interest">Annual Interest (%): </label>
+                        <input type="text" id="annual_interest" name="annual_interest">
+                        
+                        <br><br>
+                        
+                        <label for="repayment_period">Repayment Period (Years): </label>
+                        <input type="text" id="repayment_period" name="repayment_period">
+                        
+                        <br><br>
+                        
+                        <label for="zipcode">Zip Code: </label>
+                        <input type="text" id="zipcode" name="zipcode" size="5" maxlength="5" required aria-required="true">
+                        
+                        <br><br>
+                        
+                        <label for="calculate_payment">Calculate Payments: </label>
+                        <input type="button" id="calculate_payment" name="calculate_payment" onclick="Calculate()" value="Calculate">
+                        
+                        <br><br>
+                        
+                        <label for="monthly_payment">Monthly Payment: </label>
+                        <input type="text" id="monthly_payment" name="monthly_payment" readonly>
+                        
+                        <br><br>
+                        <!-- Does not work in Firefox, Safari, or IE. -->
+                        <label for="total_payment">Total Payment: </label>
+                        <input type="text" id="total_payment" name="total_payment" readonly>
+                        
+                        <br><br>
+                        
+                        <!-- Does not work in Firefox, Safari, or IE. -->
+                        <label for="total_interest">Total Interest: </label>
+                        <input type="text" id="total_interest" name="total_interest" readonly>
+                        
+                        <br><br>
+                        
+                    </fieldset>
+
+            </section>
+            <br><br>
+            <section id="lenders">    
+                    <fieldset>
+                        <legend><b>Lenders</b></legend>
+                        <p id="list"></p>
+                    </fieldset>
+                    <br><br>
+                    <input type="submit">
+            </section>
+        </form>
+        <script src="scripts/script.js"></script>
+    </body>
+</html>
+
+
